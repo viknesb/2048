@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="2048App">
+<head>
+	<meta charset="utf-8">
+	<title>2048 Game</title>
+	
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+ <script src="js/2048App.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/2048.css">
+</head>
+
+<body ng-controller="GameCtrl" ng-keydown="moveTiles($event)">
+	<div class="container">
+		<div class="square-row" ng-repeat="row in data track by $index">
+			<div class="square" ng-class="{number:(value!=undefined && value!=null && value!=0)}" ng-repeat="value in row track by $index">
+				<div class="content-holder">
+				 <span class="content">{{value}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
