@@ -14,7 +14,7 @@
 <body ng-controller="GameCtrl" ng-keydown="moveTiles($event)">
 	<div class="container">
 		<div class="square-row" ng-repeat="row in data track by $index">
-			<div class="square" ng-class="{number:(value!=undefined && value!=null && value!=0)}" ng-repeat="value in row track by $index">
+			<div class="square" ng-class="{number:!!value}" ng-repeat="value in row track by $index">
 				<div class="content-holder">
 				 <span class="content">{{value}}</span>
 				</div>
